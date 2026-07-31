@@ -26,7 +26,7 @@ All written content in this repository — including the engagement write-up, fi
 ## Suggested attribution format:
 
 > Based on "CICD-Goat VAPT Writeup" by Dheeraj Kumar Jayaswal
-> (https://github.com/dheeraj-jayaswal/cicd-goat-vapt-writeup),
+> (https://github.com/dheeraj-jayaswal/CICD-Goat-Vapt-Writeup),
 > licensed under CC BY 4.0.
 
 ---
