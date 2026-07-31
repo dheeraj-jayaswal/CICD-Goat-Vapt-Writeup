@@ -16,4 +16,4 @@ This repo documents a personal VAPT engagement against [OWASP CICD-Goat](https:/
 
 ## Reporting an issue
 
-Use the [bug report template](./.github/ISSUE_TEMPLATE/correction.md) for factual corrections, or just open a plain issue for anything else.
+Open a plain GitHub issue describing the correction or suggestion — no template required.

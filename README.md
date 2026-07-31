@@ -5,7 +5,7 @@
 [![Made for OWASP CICD-Goat](https://img.shields.io/badge/target-OWASP%20CICD--Goat-blue)](https://github.com/cider-security-research/cicd-goat)
 [![Findings](https://img.shields.io/badge/findings-16-critical)](./findings)
 [![Flags Captured](https://img.shields.io/badge/CTFd%20flags-9%2F11-success)](./ctfd/challenge-cross-reference.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)](./LICENSE)
+[![License](https://img.shields.io/badge/license-CC%20BY%204.0-blue)](./LICENSE.md)
 
 ---
 
@@ -53,6 +53,59 @@ Several findings aren't independent — one directly enables or completes anothe
 
 **9 of 11 CTFd challenges solved and flag-verified** — see the full [challenge cross-reference](./ctfd/challenge-cross-reference.md), including an honestly-documented case (Dormouse/flag9) where the access-control boundary held under sustained attack.
 
+## Full Table of Contents
+
+Every file below is directly linked — the folder tree just shows how they're organized.
+
+### 📋 Engagement Docs
+
+| File | What's in it |
+|---|---|
+| [`docs/00-engagement-overview.md`](./docs/00-engagement-overview.md) | Rules of engagement, scope, tech stack |
+| [`docs/01-methodology.md`](./docs/01-methodology.md) | Phase-by-phase testing methodology used throughout |
+| [`docs/02-owasp-top10-cicd-mapping.md`](./docs/02-owasp-top10-cicd-mapping.md) | Full CICD-SEC-1 through -10 reference taxonomy |
+| [`docs/03-remediation-roadmap.md`](./docs/03-remediation-roadmap.md) | Prioritized, actionable remediation checklist |
+| [`docs/04-interview-prep.md`](./docs/04-interview-prep.md) | Spoken-style summaries of every finding + likely follow-up questions |
+| [`docs/05-lessons-learned.md`](./docs/05-lessons-learned.md) | Retrospective — what worked, what didn't, what to do differently next time |
+
+### 🔍 Recon
+
+| File | What's in it |
+|---|---|
+| [`recon/01-fingerprinting.md`](./recon/01-fingerprinting.md) | Phase 1 — unauthenticated fingerprinting of every service in scope |
+| [`recon/02-authenticated-enumeration.md`](./recon/02-authenticated-enumeration.md) | Phase 2 — authenticated enumeration once initial access was gained |
+
+### 🚨 Critical & High Findings
+
+| File |
+|---|
+| [F-010 — Jenkins secrets exposure via console logs](./findings/F-010-jenkins-secrets-exposure-console-logs.md) |
+| [F-013 — Insecure auto-merge bypass](./findings/F-013-insecure-automerge-bypass.md) |
+| [F-014 — Flask secret key from CI/CD variable](./findings/F-014-flask-secret-key-cicd-variable.md) |
+| [F-016 — CVE-2024-23897 Jenkins CLI arbitrary file read](./findings/F-016-CVE-2024-23897-jenkins-cli-arbitrary-file-read.md) |
+| [F-017 — GitLab runner token secret theft](./findings/F-017-gitlab-runner-token-secret-theft.md) |
+| [F-018 — Decoupled pipeline branch exclusion bypass](./findings/F-018-decoupled-pipeline-branch-exclusion-bypass.md) |
+| [F-019 — Jenkins controller RCE via agent label override](./findings/F-019-jenkins-controller-rce-agent-label-override.md) |
+| [F-020 — Shared agent filesystem credential leak](./findings/F-020-shared-agent-filesystem-credential-leak.md) |
+| [F-021 — Checkov SAST config override bypass](./findings/F-021-checkov-sast-config-override-bypass.md) |
+
+### ℹ️ Informational / Supporting Findings
+
+| File |
+|---|
+| [F-006 — Private repo enumeration gap](./findings/informational/F-006-private-repo-enumeration-gap.md) |
+| [F-007 — Additional Jenkins user](./findings/informational/F-007-additional-jenkins-user.md) |
+| [F-009 — Job Read vs ExtendedRead](./findings/informational/F-009-job-read-vs-extendedread.md) |
+| [F-011 — Correct withCredentials usage (positive control)](./findings/informational/F-011-correct-withcredentials-usage.md) |
+| [F-012 — Credentials API connection drop](./findings/informational/F-012-credentials-api-connection-drop.md) |
+| [F-015 — Anonymous registry enumeration](./findings/informational/F-015-anonymous-registry-enumeration.md) |
+
+### 🎯 CTFd
+
+| File | What's in it |
+|---|---|
+| [`ctfd/challenge-cross-reference.md`](./ctfd/challenge-cross-reference.md) | Full flag-by-flag cross-reference, including the blocked Dormouse/flag9 investigation and the Duchess/flag4 correction |
+
 ## Repo structure
 
 ```
@@ -72,7 +125,7 @@ Several findings aren't independent — one directly enables or completes anothe
 │   └── informational/             # INFO/LOW severity supporting observations
 ├── ctfd/
 │   └── challenge-cross-reference.md
-└── LICENSE
+└── LICENSE.md
 ```
 
 ## Reading paths
@@ -92,10 +145,23 @@ This repository documents testing performed **exclusively against a local, self-
 
 ## License
 
-Content in this repository is licensed under the [MIT License](./LICENSE). CICD-Goat itself is a separate project by [Cider Security](https://github.com/cider-security-research/cicd-goat) — go star the original.
+This content is licensed under **[CC BY 4.0](./LICENSE.md)**. You're welcome to reuse or adapt any of this write-up — just give clear attribution to **Dheeraj Kumar Jayaswal** with a link back to this repository. CICD-Goat itself is a separate project by [Cider Security](https://github.com/cider-security-research/cicd-goat) — go star the original.
+
+## Part of a Broader Security Portfolio
+
+| Repository | What's in it |
+|---|---|
+| [From-Dev-To-Attacker](https://github.com/dheeraj-jayaswal/From-Dev-To-Attacker) | My flagship field journal — original vulnerability write-ups from a developer's lens, with enterprise domain-impact framing |
+| [API-From-The-Trenches](https://github.com/dheeraj-jayaswal/API-From-The-Trenches) | Deep-dive API security series — OWASP API Top 10, BOLA, JWT attacks, GraphQL |
+| [AppSec-From-The-Trenches](https://github.com/dheeraj-jayaswal/AppSec-From-The-Trenches) | Pentest tools & methodology reference |
+| [Bug-Bounty-Hunting-Companion](https://github.com/dheeraj-jayaswal/Bug-Bounty-Hunting-Companion) | Real disclosed bug bounty reports as reproducible checklists |
 
 ## Author
 
-**Dheeraj Kumar Jayaswal** — Certified Ethical Hacker, Web Application & API Penetration Tester.
+- **Name** — Dheeraj Kumar Jayaswal
+- **Role** — Technology Lead – Offensive Security, Infosys Limited
+- **Focus** — Web Application & API Penetration Testing
+- **Certifications** — CEH · AWS SAA · AWS CCP · IIT Kanpur Executive Cert in Cyber Security · OSCP (in progress)
+- **Connect** — [LinkedIn](https://linkedin.com/in/dheerajkumarjayaswal)
 
 Feedback, corrections, and PRs (e.g. for flag9/Dormouse, or the Duchess/flag4 follow-up in the [CTFd cross-reference](./ctfd/challenge-cross-reference.md)) are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
