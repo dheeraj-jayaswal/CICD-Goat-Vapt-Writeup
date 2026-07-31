@@ -7,6 +7,9 @@
 [![Flags Captured](https://img.shields.io/badge/CTFd%20flags-9%2F11-success)](./ctfd/challenge-cross-reference.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-blue)](./LICENSE.md)
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dheeraj%20Kumar%20Jayaswal-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/dheerajkumarjayaswal)
+[![Location](https://img.shields.io/badge/Location-Pune%2C%20India-FF6B6B?style=flat-square&logo=googlemaps&logoColor=white)](https://github.com/dheeraj-jayaswal)
+
 ---
 
 ## Why this exists
@@ -156,12 +159,32 @@ This content is licensed under **[CC BY 4.0](./LICENSE.md)**. You're welcome to 
 | [AppSec-From-The-Trenches](https://github.com/dheeraj-jayaswal/AppSec-From-The-Trenches) | Pentest tools & methodology reference |
 | [Bug-Bounty-Hunting-Companion](https://github.com/dheeraj-jayaswal/Bug-Bounty-Hunting-Companion) | Real disclosed bug bounty reports as reproducible checklists |
 
+## 🧠 Testing Philosophy
+
+> *"The best security professionals think like developers first and attackers second. If you understand why systems are built the way they are, you will always find more than any scanner ever will."*
+
+I approach every engagement in three phases: **understand before you attack** (read the app, use it as a real user, learn the business logic first) → **manual first, tools second** (the interesting bugs are found by thinking, not scanning) → **report like a developer** (a finding the dev team can't reproduce is a finding that never gets fixed).
+
 ## Author
 
 - **Name** — Dheeraj Kumar Jayaswal
 - **Role** — Technology Lead – Offensive Security, Infosys Limited
 - **Focus** — Web Application & API Penetration Testing
-- **Certifications** — CEH · AWS SAA · AWS CCP · IIT Kanpur Executive Cert in Cyber Security · OSCP (in progress)
-- **Connect** — [LinkedIn](https://linkedin.com/in/dheerajkumarjayaswal)
+- **Domains** — Income Tax · Banking · Retail · E-commerce · Freight Logistics · Education
+
+### Certifications
+
+| Certification | Issuer | Status |
+|---|---|---|
+| OSCP — Offensive Security Certified Professional | OffSec | 🔄 In Progress (2025–2026) |
+| Certified Ethical Hacker (CEH) | EC-Council | ✅ 2021 |
+| AWS Certified Solutions Architect – Associate | Amazon Web Services | ✅ 2022 |
+| AWS Certified Cloud Practitioner | Amazon Web Services | ✅ 2022 |
+| Executive Certificate in Cyber Security | IIT Kanpur | ✅ 2026 |
+
+## 🌐 Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/dheerajkumarjayaswal)
+[![Email](https://img.shields.io/badge/Email-Reach%20Out-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:jaiswal.dheeraj123@gmail.com)
 
 Feedback, corrections, and PRs (e.g. for flag9/Dormouse, or the Duchess/flag4 follow-up in the [CTFd cross-reference](./ctfd/challenge-cross-reference.md)) are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
