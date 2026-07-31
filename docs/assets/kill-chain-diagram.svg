@@ -1,0 +1,173 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12161c"/>
+      <stop offset="100%" stop-color="#181d26"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" fill="#eef1f5" font-size="24" font-weight="700">CICD-Goat &#8212; Cross-Finding Kill Chains</text>
+  <text x="600" y="66" text-anchor="middle" fill="#8791a1" font-size="13">How individually-scoped findings compound into instance-wide compromise</text>
+
+  <!-- Lane labels -->
+  <text x="40" y="112" fill="#7c8698" font-size="12" font-weight="600" letter-spacing="1">LANE A &#8212; JENKINS / GITEA</text>
+  <text x="40" y="392" fill="#7c8698" font-size="12" font-weight="600" letter-spacing="1">LANE B &#8212; JENKINS CONTROLLER (CVE)</text>
+  <text x="40" y="602" fill="#7c8698" font-size="12" font-weight="600" letter-spacing="1">LANE C &#8212; GITLAB</text>
+
+  <line x1="30" y1="122" x2="1170" y2="122" stroke="#2a313d" stroke-width="1"/>
+  <line x1="30" y1="402" x2="1170" y2="402" stroke="#2a313d" stroke-width="1"/>
+  <line x1="30" y1="612" x2="1170" y2="612" stroke="#2a313d" stroke-width="1"/>
+
+  <!-- ============ LANE A: F-010 -> push -> F-013 -> flag10 ============ -->
+
+  <!-- F-010 box -->
+  <rect x="40" y="150" width="230" height="92" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="55" y="174" fill="#e8746a" font-size="11" font-weight="700">CRITICAL &#183; F-010</text>
+  <text x="55" y="196" fill="#eef1f5" font-size="13" font-weight="600">Dump_Env stage leaks</text>
+  <text x="55" y="213" fill="#eef1f5" font-size="13" font-weight="600">2 live Gitea tokens</text>
+  <text x="55" y="232" fill="#9aa3b2" font-size="11">PR-1 console log, white-rabbit</text>
+
+  <path d="M270,196 L330,196" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- token validated -->
+  <rect x="330" y="150" width="220" height="92" rx="8" fill="#1c2129" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="345" y="174" fill="#9aa3b2" font-size="11" font-weight="700">VALIDATE</text>
+  <text x="345" y="196" fill="#eef1f5" font-size="13" font-weight="600">jenkins_caterpillar</text>
+  <text x="345" y="213" fill="#eef1f5" font-size="13" font-weight="600">token: push:true</text>
+  <text x="345" y="232" fill="#9aa3b2" font-size="11">confirmed via Gitea API</text>
+
+  <path d="M550,196 L610,196" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- unauthorized push -->
+  <rect x="610" y="150" width="230" height="92" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="625" y="174" fill="#e8746a" font-size="11" font-weight="700">IMPACT</text>
+  <text x="625" y="196" fill="#eef1f5" font-size="13" font-weight="600">Unauthorized push +</text>
+  <text x="625" y="213" fill="#eef1f5" font-size="13" font-weight="600">automatic CI build</text>
+  <text x="625" y="232" fill="#9aa3b2" font-size="11">full PR-to-RCE style chain</text>
+
+  <!-- F-013 box, below F-010, same lane -->
+  <rect x="40" y="280" width="290" height="92" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="55" y="304" fill="#e8746a" font-size="11" font-weight="700">CRITICAL &#183; F-013</text>
+  <text x="55" y="326" fill="#eef1f5" font-size="13" font-weight="600">Auto-merge PR-wide word-diff</text>
+  <text x="55" y="343" fill="#eef1f5" font-size="13" font-weight="600">heuristic bypassed</text>
+  <text x="55" y="362" fill="#9aa3b2" font-size="11">mock-turtle, review skipped</text>
+
+  <path d="M330,326 L390,326" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="390" y="280" width="230" height="92" rx="8" fill="#1c2129" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="405" y="304" fill="#9aa3b2" font-size="11" font-weight="700">TECHNIQUE CHAIN</text>
+  <text x="405" y="326" fill="#eef1f5" font-size="13" font-weight="600">Smuggle Jenkinsfile</text>
+  <text x="405" y="343" fill="#eef1f5" font-size="13" font-weight="600">change via same bypass</text>
+  <text x="405" y="362" fill="#9aa3b2" font-size="11">reuses F-010 masking-bypass encode</text>
+
+  <path d="M620,326 L680,326" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="680" y="280" width="200" height="92" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="695" y="304" fill="#e8746a" font-size="11" font-weight="700">FLAG CAPTURE</text>
+  <text x="695" y="330" fill="#eef1f5" font-size="15" font-weight="700">flag10</text>
+  <text x="695" y="352" fill="#9aa3b2" font-size="11">CTFd-verified, zero review</text>
+
+  <!-- ============ LANE B: F-016 CVE -> reads -> flag1/flag8/mad-hatter config ============ -->
+
+  <rect x="40" y="430" width="250" height="100" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="55" y="454" fill="#e8746a" font-size="11" font-weight="700">CRITICAL &#183; F-016</text>
+  <text x="55" y="476" fill="#eef1f5" font-size="13" font-weight="600">CVE-2024-23897</text>
+  <text x="55" y="493" fill="#eef1f5" font-size="13" font-weight="600">Jenkins CLI @-file read</text>
+  <text x="55" y="512" fill="#9aa3b2" font-size="11">alice (Overall/Read only) &#8594; controller FS</text>
+
+  <path d="M290,480 L350,480" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="350" y="430" width="230" height="100" rx="8" fill="#1c2129" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="365" y="454" fill="#9aa3b2" font-size="11" font-weight="700">DEAD END (documented)</text>
+  <text x="365" y="476" fill="#eef1f5" font-size="13" font-weight="600">hudson.util.Secret</text>
+  <text x="365" y="493" fill="#eef1f5" font-size="13" font-weight="600">binary decrypt &#8594; infeasible</text>
+  <text x="365" y="512" fill="#9aa3b2" font-size="11">confirmed via Jenkins' own advisory</text>
+
+  <path d="M465,530 L465,555" stroke="#5b6472" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="350" y="560" width="230" height="76" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="365" y="583" fill="#e8746a" font-size="11" font-weight="700">ACTUAL WIN</text>
+  <text x="365" y="605" fill="#eef1f5" font-size="13" font-weight="600">secrets.properties</text>
+  <text x="365" y="624" fill="#9aa3b2" font-size="11">plaintext bootstrap file, no decrypt needed</text>
+
+  <path d="M290,505 L940,505" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="940" y="430" width="220" height="100" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="955" y="454" fill="#e8746a" font-size="11" font-weight="700">FLAG CAPTURE</text>
+  <text x="955" y="480" fill="#eef1f5" font-size="15" font-weight="700">flag1 &#183; flag8</text>
+  <text x="955" y="502" fill="#9aa3b2" font-size="11">from credentials.xml /</text>
+  <text x="955" y="518" fill="#9aa3b2" font-size="11">secrets.properties, CTFd-verified</text>
+
+  <path d="M290,455 L940,455" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="940" y="560" width="220" height="76" rx="8" fill="#241819" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="955" y="583" fill="#f0a868" font-size="11" font-weight="700">HIGH &#183; F-018</text>
+  <text x="955" y="605" fill="#eef1f5" font-size="13" font-weight="600">mad-hatter config.xml</text>
+  <text x="955" y="624" fill="#9aa3b2" font-size="11">reveals decoupled pipeline repo</text>
+
+  <path d="M580,598 L940,598" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- ============ LANE C: F-014 blocked -> F-017 -> flag11 -> completes F-014 ============ -->
+
+  <rect x="40" y="640" width="260" height="100" rx="8" fill="#241d19" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="55" y="664" fill="#f0a868" font-size="11" font-weight="700">HIGH &#183; F-014 (blocked)</text>
+  <text x="55" y="686" fill="#eef1f5" font-size="13" font-weight="600">Flask secret_key = FLAG11</text>
+  <text x="55" y="703" fill="#eef1f5" font-size="13" font-weight="600">design flaw confirmed</text>
+  <text x="55" y="722" fill="#9aa3b2" font-size="11">real value not obtainable &#8212; access wall</text>
+
+  <path d="M300,690 L360,690" stroke="#5b6472" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="303" y="682" fill="#7c8698" font-size="10" font-style="italic">needs real value</text>
+
+  <rect x="360" y="640" width="260" height="100" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="375" y="664" fill="#e8746a" font-size="11" font-weight="700">CRITICAL &#183; F-017</text>
+  <text x="375" y="686" fill="#eef1f5" font-size="13" font-weight="600">Rogue shared-runner</text>
+  <text x="375" y="703" fill="#eef1f5" font-size="13" font-weight="600">registration (no login needed)</text>
+  <text x="375" y="722" fill="#9aa3b2" font-size="11">2 API calls, no auth beyond token</text>
+
+  <path d="M620,690 L680,690" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="680" y="640" width="230" height="100" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="695" y="664" fill="#e8746a" font-size="11" font-weight="700">IMPACT</text>
+  <text x="695" y="686" fill="#eef1f5" font-size="13" font-weight="600">Every masked/protected</text>
+  <text x="695" y="703" fill="#eef1f5" font-size="13" font-weight="600">CI variable, plaintext</text>
+  <text x="695" y="722" fill="#9aa3b2" font-size="11">instance-wide, not one project</text>
+
+  <path d="M910,690 L940,690" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <rect x="940" y="640" width="220" height="100" rx="8" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="955" y="664" fill="#e8746a" font-size="11" font-weight="700">FLAG + COMPLETION</text>
+  <text x="955" y="690" fill="#eef1f5" font-size="15" font-weight="700">flag11</text>
+  <text x="955" y="710" fill="#9aa3b2" font-size="11">real FLAG11 value recovered &#8594;</text>
+  <text x="955" y="726" fill="#9aa3b2" font-size="11">fully completes F-014</text>
+
+  <!-- feedback arrow F-017 completes F-014 -->
+  <path d="M1050,640 C 1050,600 500,600 300,644" stroke="#e67e22" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="620" y="600" fill="#7c8698" font-size="11" font-style="italic" text-anchor="middle">completes / weaponizes</text>
+
+  <!-- Legend -->
+  <rect x="40" y="800" width="16" height="16" rx="3" fill="#241819" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="64" y="813" fill="#c7cdd8" font-size="12">Critical</text>
+
+  <rect x="150" y="800" width="16" height="16" rx="3" fill="#241d19" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="174" y="813" fill="#c7cdd8" font-size="12">High</text>
+
+  <rect x="250" y="800" width="16" height="16" rx="3" fill="#1c2129" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="274" y="813" fill="#c7cdd8" font-size="12">Technique / dead end</text>
+
+  <line x1="430" y1="808" x2="470" y2="808" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="480" y="813" fill="#c7cdd8" font-size="12">Direct exploitation chain</text>
+
+  <line x1="680" y1="808" x2="720" y2="808" stroke="#e67e22" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="730" y="813" fill="#c7cdd8" font-size="12">Cross-finding dependency</text>
+
+  <text x="600" y="860" text-anchor="middle" fill="#5b6472" font-size="11">Full details, PoCs, and remediation for every box: see /findings in this repository</text>
+</svg>
