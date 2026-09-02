@@ -1,6 +1,12 @@
+<div align="center">
+
 # CICD-Goat VAPT Writeup
 
+</div>
+
 > A full vulnerability assessment & penetration test against [OWASP CICD-Goat](https://github.com/cider-security-research/cicd-goat) — a deliberately vulnerable CI/CD environment (Jenkins, Gitea, GitLab, CTFd) — mapped end-to-end against the **OWASP Top 10 CI/CD Security Risks**.
+
+<div align="center">
 
 [![Made for OWASP CICD-Goat](https://img.shields.io/badge/target-OWASP%20CICD--Goat-blue)](https://github.com/cider-security-research/cicd-goat)
 [![Findings](https://img.shields.io/badge/findings-16-critical)](./findings)
@@ -10,7 +16,26 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Dheeraj%20Kumar%20Jayaswal-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/dheerajkumarjayaswal)
 [![Location](https://img.shields.io/badge/Location-Pune%2C%20India-FF6B6B?style=flat-square&logo=googlemaps&logoColor=white)](https://github.com/dheeraj-jayaswal)
 
+</div>
+
 ---
+
+
+## 🧭 How This Fits With My Other Repos
+
+| Repository | What's in it |
+|---|---|
+| **[CICD-Goat-Vapt-Writeup](https://github.com/dheeraj-jayaswal/CICD-Goat-Vapt-Writeup)** *(this repo)* | Full VAPT writeup against OWASP CICD-Goat — 16 findings including CVE-2024-23897, mapped to the OWASP Top 10 CI/CD Security Risks, with PoCs and interview-ready summaries |
+| [From-Dev-To-Attacker](https://github.com/dheeraj-jayaswal/From-Dev-To-Attacker) | My flagship field journal — 67 original write-ups on vulnerability patterns, written from a developer's lens, with enterprise domain-impact framing across Income Tax, Banking, Retail, E-commerce, Freight Logistics, and Education |
+| [From-Pentester-To-Red-Teamer](https://github.com/dheeraj-jayaswal/From-Pentester-To-Red-Teamer) | My structured 24-month roadmap for transitioning from Web/API pentesting into Red Teaming — phases, labs, certifications, and progress tracked openly as I work through it |
+| [AppSec-From-The-Trenches](https://github.com/dheeraj-jayaswal/AppSec-From-The-Trenches) | Pentest tools & methodology reference — how I actually use Burp Suite, Nmap, Metasploit, Hydra, Hashcat, and more, plus my WAPT methodology |
+| [API-From-The-Trenches](https://github.com/dheeraj-jayaswal/API-From-The-Trenches) | Deep-dive API security series — OWASP API Top 10 coverage, BOLA, JWT attacks, GraphQL testing, full methodology |
+| [Bug-Bounty-Hunting-Companion](https://github.com/dheeraj-jayaswal/Bug-Bounty-Hunting-Companion) | Real, publicly-disclosed bug bounty reports broken into reproducible checklists |
+| [DarkWeb-From-The-Trenches](https://github.com/dheeraj-jayaswal/DarkWeb-From-The-Trenches) | Threat intelligence & dark web OSINT methodology — credential leak monitoring, ransomware tracking, pre-engagement TI |
+| [.pcap-Arsenal](https://github.com/dheeraj-jayaswal/.pcap-Arsenal) | Packet captures organized by protocol, for Web/API/Network-layer analysis and learning |
+
+---
+
 
 ## Why this exists
 
@@ -146,31 +171,35 @@ Every finding here is mapped against the [OWASP Top 10 CI/CD Security Risks (202
 
 This repository documents testing performed **exclusively against a local, self-hosted, intentionally-vulnerable training lab** ([OWASP CICD-Goat](https://github.com/cider-security-research/cicd-goat)), for educational and portfolio purposes. Nothing here targets, references, or was tested against any production system, third-party service, or real credential. Do not use any technique in this repo against systems you do not own or have explicit written authorization to test.
 
-## License
+---
 
-This content is licensed under **[CC BY 4.0](./LICENSE.md)**. You're welcome to reuse or adapt any of this write-up — just give clear attribution to **Dheeraj Kumar Jayaswal** with a link back to this repository. CICD-Goat itself is a separate project by [Cider Security](https://github.com/cider-security-research/cicd-goat) — go star the original.
-
-## Part of a Broader Security Portfolio
-
-| Repository | What's in it |
-|---|---|
-| [From-Dev-To-Attacker](https://github.com/dheeraj-jayaswal/From-Dev-To-Attacker) | My flagship field journal — original vulnerability write-ups from a developer's lens, with enterprise domain-impact framing |
-| [API-From-The-Trenches](https://github.com/dheeraj-jayaswal/API-From-The-Trenches) | Deep-dive API security series — OWASP API Top 10, BOLA, JWT attacks, GraphQL |
-| [AppSec-From-The-Trenches](https://github.com/dheeraj-jayaswal/AppSec-From-The-Trenches) | Pentest tools & methodology reference |
-| [Bug-Bounty-Hunting-Companion](https://github.com/dheeraj-jayaswal/Bug-Bounty-Hunting-Companion) | Real disclosed bug bounty reports as reproducible checklists |
 
 ## 🧠 Testing Philosophy
 
-> *"The best security professionals think like developers first and attackers second. If you understand why systems are built the way they are, you will always find more than any scanner ever will."*
+> *"The best penetration testers think like developers first and attackers second. If you understand why code was written a certain way, you'll always find more than a scanner ever will."*
 
-I approach every engagement in three phases: **understand before you attack** (read the app, use it as a real user, learn the business logic first) → **manual first, tools second** (the interesting bugs are found by thinking, not scanning) → **report like a developer** (a finding the dev team can't reproduce is a finding that never gets fixed).
+I approach every engagement in three phases:
 
-## Author
+**1. Understand before you attack** — Read the application. Use it as a real user. Understand the business logic before touching a single tool.
+
+**2. Manual first, tools second** — Automated scanners find what they're configured to find. The interesting bugs are always found by thinking, not scanning.
+
+**3. Report like a developer** — A finding that developers can't understand or reproduce is a finding that doesn't get fixed.
+
+---
+
+
+## 👤 About Me
 
 - **Name** — Dheeraj Kumar Jayaswal
 - **Role** — Technology Lead – Offensive Security, Infosys Limited
 - **Focus** — Web Application & API Penetration Testing
+- **Experience** — 15+ years in IT · 6+ years in Offensive Security
+- **Edge** — Former full-stack developer (ASP.NET / SQL Server) — I think like a developer, attack like a hacker
 - **Domains** — Income Tax · Banking · Retail · E-commerce · Freight Logistics · Education
+
+---
+
 
 ## 🏅 Certifications
 
@@ -180,14 +209,23 @@ I approach every engagement in three phases: **understand before you attack** (r
 | AWS Certified Solutions Architect – Associate | Amazon Web Services | ✅ 2022 |
 | AWS Certified Cloud Practitioner | Amazon Web Services | ✅ 2022 |
 | Executive Certificate in Cyber Security | IIT Kanpur | ✅ 2026 |
-| OSWE — OffSec Web Expert (OSCE3 track) | 🔄 In Progress |
+| OSWE — OffSec Web Expert (OSCE3 track) | OffSec | 🔄 In Progress |
 
 **Future direction — Red Teaming:** OSCP → CRTO → OSEP, CRTP, CRTL, CRTE
 
+---
 
-## 🌐 Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/dheerajkumarjayaswal)
-[![Email](https://img.shields.io/badge/Email-Reach%20Out-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:jaiswal.dheeraj123@gmail.com)
+## 📄 License
+
+This content is licensed under **[CC BY 4.0](./LICENSE.md)**. You're welcome to reuse or adapt any of this write-up — just give clear attribution to **Dheeraj Kumar Jayaswal** with a link back to this repository. CICD-Goat itself is a separate project by [Cider Security](https://github.com/cider-security-research/cicd-goat) — go star the original.
+
+---
+
+
+## 🤝 Connect
+
+[LinkedIn](https://linkedin.com/in/dheerajkumarjayaswal) — open to consulting, collaboration, and security discussions.
+
 
 Feedback, corrections, and PRs (e.g. for flag9/Dormouse, or the Duchess/flag4 follow-up in the [CTFd cross-reference](./ctfd/challenge-cross-reference.md)) are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
